@@ -1,0 +1,6 @@
+/target
+/.settings
+.project
+.classpath
+/src/main/resources/com/vishwakarma/vastu/db.properties
+/Servers 

@@ -1,0 +1,21 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.apache.commons.digester.Digester" level="ERROR" />
+	<logger name="com.vishwakarma.vastu" level="DEBUG" />
+
+	<!-- Trace Level Logs -->
+	<logger name="org.springframework" level="TRACE" />
+	<logger name="org.springframework.transaction" level="INFO" />
+	<logger name="org.springframework.security" level="INFO" /> <!-- to debug security related issues (DEBUG) -->
+	<logger name="org.springframework.web.servlet.mvc" level="TRACE" /> <!-- some serialization issues are at trace level here: org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod -->
+	<!-- End Trace Level Logs -->
+
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

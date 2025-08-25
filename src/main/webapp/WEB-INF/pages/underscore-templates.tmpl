@@ -1,0 +1,31 @@
+<script type="text/template" id="industryTemplate">
+	<@ var i = 1; @>
+	<@ _.each(industries, function(industry) { @>
+		<div class="col-md-4" style="padding:5px 0px">
+			<input type="checkbox" name="industries" id="industries" value="<@= industry.id @>" 
+				<@ if(_.contains(selectedIndustries, industry.id)) { @> checked="checked" <@}@>> <@= industry.name @>
+			<br><@= industry.description @>
+		</div>
+		<@ if(i%3 == 0) { @>
+			<div class="clearfix"></div>
+		<@ }; i++; @>
+	<@ }); @>						
+</script>
+
+<script type="text/template" id="storeManagerTemplate">
+	<@ var i = 1; @>
+	<@ _.each(storeManagers, function(storeManager) { @>
+		<div class="col-md-4" style="padding:5px 0px">
+			<input type="checkbox" name="storeManagers" id="storeManagers" value="<@= storeManager.id @>" 
+				<@ if(_.contains(selectedStoreManagers, storeManager.id)) { @> checked="checked" <@}@>> <@= storeManager.name @>
+		</div>
+		<@ if(i%3 == 0) { @>
+			<div class="clearfix"></div>
+		<@ }; i++; @>
+	<@ }); @>
+</script>
+
+<script type="text/javascript">
+var industries = [], storeManagers = [];
+var selectedIndustries = [], selectedStoreManagers = [];
+</script>
